@@ -6,7 +6,7 @@
     RUN apt-get update && apt-get install -y git
     
     # Clone your frontend repo
-    RUN git clone https://github.com/imasheshk/k8sfe.git .
+    RUN git clone https://github.com/varun28sharma/K8s.git .
     
     RUN npm install
     RUN npm run build
