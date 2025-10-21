@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: varun28sharma/k8sfedocker:v1   # ✅ Your image
+        image: varuns/k8sfiles:v1   # image built locally
+        imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8080             # ✅ Must match app’s internal port
+        - containerPort: 8080             # Must match app’s internal port
 ---
 apiVersion: v1
 kind: Service
@@ -27,6 +28,6 @@ spec:
   ports:
     - port: 8085       # Cluster port
       targetPort: 8080  # Container port
-      nodePort: 30082   # Accessible via http://localhost:30083
+      nodePort: 30082   # Accessible via http://localhost:30082
   selector:
     app: frontend
