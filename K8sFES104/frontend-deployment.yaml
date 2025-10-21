@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: varuns/k8sfiles:v1   # image built locally
-        imagePullPolicy: IfNotPresent
+  image: varrun123/k8sfiles:v1   # image on Docker Hub (user: varrun123)
+  imagePullPolicy: Always
         ports:
         - containerPort: 8080             # Must match app’s internal port
 ---
